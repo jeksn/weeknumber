@@ -15,18 +15,18 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="absolute bottom-10 left-10 flex items-center justify-center">
+      <div className="w-full md:w-auto mx-auto md:mx-0 absolute bottom-10 md:left-10 flex items-center justify-center">
         <button
           type="button"
           onClick={openModal}
-          className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+          className="border-white border rounded-md px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-black transition-all ease-in-out duration-500"
         >
           What is this?
         </button>
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-50" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -38,8 +38,9 @@ export default function MyModal() {
           >
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
-
+    {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div className="fixed inset-0 overflow-y-auto">
+    <div className="fixed inset-0 bg-white/5" aria-hidden="true" />
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
