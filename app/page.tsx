@@ -2,8 +2,8 @@ import dayjs from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 import MyDialog from './components/Dialog'
 
-"use client"
 function WeekNum() {
+  "use client"
   dayjs.extend(weekOfYear);
   const WeekNumber = dayjs().week(); 
   return (
