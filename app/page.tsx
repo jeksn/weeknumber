@@ -1,10 +1,8 @@
-import { Inter } from '@next/font/google'
 import dayjs from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 import MyDialog from './components/Dialog'
 
-const inter = Inter({ subsets: ['latin'] })
-
+"use client"
 function WeekNum() {
   dayjs.extend(weekOfYear);
   const WeekNumber = dayjs().week(); 
